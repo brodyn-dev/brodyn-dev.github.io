@@ -11,7 +11,7 @@ Independent business website by Hafizz. Static HTML and CSS, hosted through the 
 - Preserve the three original projects; add ongoing labour-market research and the internal BMS.
 - Preserve the founder's research, Learning & Development, employment services, compliance and programme-monitoring background; connect it to practical digital solutions.
 - Group existing and new skills. Python, SQL and Git remain foundational; Power Apps is developing.
-- Add seven verified course/learning-path completions in a compact expandable section; public PDF links await explicit approval. These do not assert PL-300, MOS or PMP certification or Microsoft partnership.
+- Add seven verified course/learning-path completions in a compact expandable section; privacy-edited PDFs are linked with the user’s approval. These do not assert PL-300, MOS or PMP certification or Microsoft partnership.
 - Identify vending work as a family-business practice project, not an independently verified paid client engagement.
 
 ## Preservation checklist
@@ -19,7 +19,7 @@ Independent business website by Hafizz. Static HTML and CSS, hosted through the 
 - [x] Original Malaysia Labour Market Intelligence case-study text, findings, caveats and attributions.
 - [x] Both original dashboard screenshots, unchanged.
 - [x] All original external dashboard and email URLs.
-- [ ] Original certificate PDF publication: blocked by automatic approval review pending explicit permission to disclose full legal name and credential details publicly.
+- [x] Seven privacy-edited certificate PDFs included and linked; only Mohammad Hafizz remains visible.
 - [x] Financial Sample description, sample-data disclaimer and in-development status.
 - [x] Vending scope and privacy protection; no private dashboard added.
 - [x] All existing relevant skills, including HTML/CSS, Cloudflare and Search Console.
@@ -37,13 +37,13 @@ Modified:
 Added:
 - `assets/site.css`: original inline CSS extracted into one shared stylesheet, with responsive expansion styles.
 
-Pending assets: seven original certificate PDFs. Their course titles and dates were verified, but the PDFs are not included in this public branch and there are no PDF links. Automatic approval review requires explicit permission to publish the holder's full legal name and credential details. The public biography uses Hafizz.
+Seven privacy-edited PDFs are included under `assets/credentials/`. The surname was permanently redacted, metadata removed and copies labelled as privacy-edited. Original certificates remain unchanged and are not published.
 
 ## Verification and remaining review
 
-Checked local links, fragment targets, original external-link preservation, sitemap XML, unchanged domain/configuration/image files, and original certificate bytes. Certificate titles/dates were extracted and visually reviewed against the PDFs.
+Checked local links, fragment targets, original external-link preservation, sitemap XML, unchanged domain/configuration/image files, and redacted certificate text. Certificate titles/dates were extracted and visually reviewed against the PDFs.
 
-A local Chromium download failed in this environment, so desktop/mobile browser rendering has NOT been verified. Before merging, preview at desktop and phone widths, open the credential and service accordions, and click the case-study and PDF links. Seven certificate PDFs are intentionally withheld pending publication approval. Financial Sample is still in development; BMS has no public demo or private records attached, intentionally. Add new evidence only as modules are completed.
+A local Chromium download failed in this environment, so desktop/mobile browser rendering has NOT been verified. Before merging, preview at desktop and phone widths, open the credential and service accordions, and click the case-study and PDF links. All seven privacy-edited certificate links resolve locally. Financial Sample is still in development; BMS has no public demo or private records attached, intentionally. Add new evidence only as modules are completed.
 
 ## Preview on Windows (PowerShell)
 
