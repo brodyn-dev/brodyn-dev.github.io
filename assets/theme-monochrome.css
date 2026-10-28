@@ -1,13 +1,16 @@
 /* Monochrome theme: inspired by "UI Kit Website Monochrome Style" by Genoflow (CC BY 4.0).
-   Layout, colour and type cues only. No images, logos or copy from the source file. */
+   Layout, colour and type cues only. No images, logos or copy from the source file.
+   Tuned for contrast: text and card edges must read clearly at a glance. */
 
 :root{
-  --bg:#0a0a0a;
-  --panel:#121212;
-  --ink:#ededed;
-  --muted:#9a9a9a;
-  --line:#2a2a2a;
-  --accent:#ffffff;
+  --bg:#141414;
+  --panel:#1d1d1d;
+  --panel-2:#232323;
+  --ink:#f5f5f5;
+  --ink-2:#d6d6d6;
+  --muted:#b8b8b8;
+  --line:#3d3d3d;
+  --line-strong:#5a5a5a;
 }
 
 html{background:var(--bg)}
@@ -18,17 +21,15 @@ body{
   letter-spacing:.1px;
 }
 body::before{
-  /* faint vertical guide, as in the source layout */
   content:"";
   position:fixed;inset:0 auto 0 calc(50% - 560px);
-  width:1px;background:rgba(255,255,255,.06);
+  width:1px;background:rgba(255,255,255,.08);
   pointer-events:none;z-index:0;
 }
-/* film-grain feel without images */
 body::after{
   content:"";
   position:fixed;inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);
+  background-image:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
   background-size:3px 3px;
   pointer-events:none;z-index:0;
 }
@@ -36,87 +37,90 @@ main,header,footer{position:relative;z-index:1}
 
 a{color:var(--ink)}
 a:hover{color:#fff}
-a:focus-visible,summary:focus-visible{outline:1px solid #fff;outline-offset:5px}
+a:focus-visible,summary:focus-visible{outline:2px solid #fff;outline-offset:5px}
 
-header{background:rgba(10,10,10,.92);border-bottom:1px solid var(--line)}
-.brand{letter-spacing:4px;font-weight:700}
+header{background:rgba(20,20,20,.96);border-bottom:1px solid var(--line)}
+.brand{letter-spacing:4px;font-weight:700;color:#fff}
 .mark i{background:#fff}
+nav a{color:var(--ink-2)}
 nav a:hover{color:#fff}
 
-/* Headings: grey-to-white gradient, as in the source */
+/* Headings: clear light gradient, strong enough to read */
 h1,h2,.report h2{
-  background:linear-gradient(90deg,#7d7d7d 0%,#f2f2f2 85%);
+  background:linear-gradient(90deg,#c9c9c9 0%,#ffffff 80%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;
   font-weight:500;letter-spacing:-1px;
 }
-h3{color:var(--ink);font-weight:500}
-.eyebrow{color:var(--muted);letter-spacing:3px}
+h3{color:#fff;font-weight:500}
+.eyebrow{color:var(--ink-2);letter-spacing:3px}
 .intro,.section-heading p,.project-body p,.service-grid p,.about p,.case-section p,.hero-note{color:var(--muted)}
 .about strong,.about p strong{color:var(--ink)}
 
-/* Buttons: outline pill, as in the source */
+/* Buttons: outline pill, clearer edge */
 .button{
-  background:transparent;color:var(--ink);
-  border:1px solid #6b6b6b;border-radius:999px;
-  padding:13px 26px;font-weight:500;
+  background:transparent;color:#fff;
+  border:1px solid #9a9a9a;border-radius:999px;
+  padding:13px 26px;font-weight:600;
 }
 .button:hover{background:#fff;color:#000;border-color:#fff}
-.button.secondary{border-color:#3d3d3d}
+.button.secondary{border-color:#7a7a7a;color:var(--ink)}
 
-/* Panels and cards */
+/* Panels */
 .hero .report,.report{
-  background:var(--panel);color:var(--ink);
-  border:1px solid var(--line);border-radius:6px;
+  background:var(--panel-2);color:var(--ink);
+  border:1px solid var(--line-strong);border-radius:8px;
   box-shadow:none;transform:none;
 }
-.report p,.report-top,.report-foot,.legend,.metric span{color:var(--muted)}
-.metric{border-left:1px solid #555}
+.report p,.report-top,.report-foot,.legend,.metric span{color:var(--ink-2)}
+.metric{border-left:2px solid #9a9a9a}
 .metric strong{color:#fff}
-.bar b:first-child{background:#e5e5e5}
-.bar b:last-child{background:#333}
+.bar b:first-child{background:#f0f0f0}
+.bar b:last-child{background:#555}
 
 .tools,.workflow{border-color:var(--line)}
 .tools span,.workflow li span{color:var(--muted)}
-.tools b,.workflow li{color:var(--ink)}
-.workflow,.services,.learning{background:#0f0f0f}
+.tools b,.workflow li{color:#fff}
+.workflow,.services,.learning{background:#191919}
 
-section{border-top:1px solid #161616}
+section{border-top:1px solid #222}
 .section-heading{border-bottom:1px solid var(--line);padding-bottom:24px}
 
-.project{background:var(--panel);border:1px solid var(--line);border-radius:6px}
-.project-top{background:#0d0d0d !important;border-bottom:1px solid var(--line)}
-.project:nth-child(n) .project-top{background:#0d0d0d !important}
-.project-top span{color:var(--muted)}
-.project-top strong{color:#e8e8e8;font-weight:400}
-.tag{color:#bdbdbd}
+/* Cards: visible edge and a lighter surface than the page */
+.project{background:var(--panel);border:1px solid var(--line-strong);border-radius:8px}
+.project-top{background:#2a2a2a !important;border-bottom:1px solid var(--line-strong)}
+.project:nth-child(n) .project-top{background:#2a2a2a !important}
+.project-top span{color:#cfcfcf}
+.project-top strong{color:#fff;font-weight:400}
+.tag{color:#e6e6e6}
 .project-body details,summary{border-color:var(--line)}
-.project-link{color:#fff}
-.status{color:var(--muted)}
-.project-image{background:#0d0d0d}
+summary{color:#fff}
+.project-link{color:#fff;text-decoration-color:#fff}
+.status{color:var(--ink-2)}
+.project-image{background:#2a2a2a}
 
 .service-grid article,.skill-grid article{border-color:var(--line);background:transparent}
-.service-grid article{border-top:1px solid #3a3a3a}
+.service-grid article{border-top:2px solid #7a7a7a}
 .service-grid article{background:transparent !important}
-.service-num{color:var(--muted);font-weight:400}
-.credentials span{border-color:#333;color:#cfcfcf;background:transparent}
+.service-num{color:#cfcfcf;font-weight:600}
+.credentials span{border-color:#6a6a6a;color:#f0f0f0;background:#262626}
 
-.contact{background:#0f0f0f;border:1px solid var(--line);border-radius:6px;color:var(--ink)}
-.contact p,.contact small{color:var(--muted)}
-.contact .eyebrow{color:var(--muted)}
+.contact{background:var(--panel-2);border:1px solid var(--line-strong);border-radius:8px;color:#fff}
+.contact p,.contact small{color:var(--ink-2)}
+.contact .eyebrow{color:#e6e6e6}
 .contact a{background:#fff;color:#000;border-color:#fff}
-.contact a:hover{background:#ddd;color:#000}
+.contact a:hover{background:#dcdcdc;color:#000}
 
-.credential-list{background:var(--panel);border-color:var(--line)}
+.credential-list{background:var(--panel);border-color:var(--line-strong)}
 .credential-grid li{border-color:var(--line)}
 .credential-grid p,.learning-note{color:var(--muted)}
-.credential-kind{color:#bdbdbd}
+.credential-kind{color:#e6e6e6}
 .credential-grid a{color:#fff}
 
-.note{border-left:1px solid #777;background:#0f0f0f;color:var(--muted)}
-.findings article{background:#0f0f0f;border:1px solid var(--line)}
+.note{border-left:2px solid #9a9a9a;background:#232323;color:var(--ink-2)}
+.findings article{background:#232323;border:1px solid var(--line)}
 .findings strong{color:#fff}
-.shot img{border-color:var(--line)}
+.shot img{border-color:var(--line-strong)}
 
 footer{border-top:1px solid var(--line);color:var(--muted);background:var(--bg)}
 footer a{color:var(--ink)}
