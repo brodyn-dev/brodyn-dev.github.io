@@ -123,7 +123,7 @@ details ul{padding-left:var(--space-lg);color:var(--color-muted);font-size:var(-
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--space-xl);align-items:center}
-.about p{color:var(--color-muted);margin-top:0}
+.about p{color:var(--color-muted);margin-bottom:var(--space-md)}
 .about strong{color:var(--color-ink)}
 .about>div:first-child .lead{max-width:none;color:var(--color-ink);font-weight:600}
 
