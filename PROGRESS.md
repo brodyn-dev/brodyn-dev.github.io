@@ -1,5 +1,19 @@
 # Progress Log
 
+## 2026-11-25 — Redesign susunan/layout homepage, branch `redesign/homepage-layout-refresh`, PR #11
+
+User minta redesign susunan/layout `index.html` (reference luar sebagai arahan visual), tanpa ubah content BRODYN sedia ada. Dibuat guna skill Hallmark (`redesign` mode, full depth) + `no-ai-slop` untuk ayat yang terpaksa ditulis semula. Kerja berat (baca reference, sloplint) di-delegate ke subagent fork; hasil disemak manual (baca diff penuh, browser screenshot setiap section, desktop+mobile).
+
+**Branch:** `redesign/homepage-layout-refresh`, pushed, PR #11 dibuka ke `main`, Auto-fix dihidupkan. Fail diubah: `index.html`, `assets/site.css` (edit); `assets/tokens.css`, `assets/base.css` (baru, design tokens Hallmark); `malaysia-labour-market.html` (patch kecil — unlink stylesheet + footer class, tak redesign penuh sebab share stylesheet/nav dengan index).
+
+**Keputusan besar yang dah confirm dengan user:** `assets/theme-monochrome.css` (yang sebenarnya menang cascade dan buat seluruh live site nampak dark/monochrome penuh — bukan navy/blue macam dieskripsi dalam CLAUDE.md asal) **di-unlink** daripada kedua-dua HTML. Lepas unlink, site jadi light-theme dengan navy/blue + hero/contact card gelap, padan dengan "navy/blue identity" yang CLAUDE.md sebut. Fail `theme-monochrome.css` sendiri tak dipadam, cuma tak linked lagi. User dah confirm teruskan dengan versi light ni. **Nota:** PR belum merge lagi — site live (brodynhq.com) masih tunjuk versi lama sampai PR tu merge ke `main`.
+
+**Content/wiring:** semua fakta, link, id, `<details>`, credential PDF, projek, dsb. dikekalkan (diverify manual line-by-line dalam diff). Satu drop yang fork tak declare secara eksplisit dah dibetulkan semula: label kata kerja workflow (Collect/Organise/Connect/Understand/Act) hilang semasa redesign — ditambah balik dengan class `.workflow-verb` (bukan tracked-caps, ikut Hallmark Floor rule). Dropped (minor, by design): attribution "Genoflow UI Kit Monochrome CC BY 4.0" dalam footer (sebab stylesheet tu dah tak dipakai); nama pendek/codename project card (contoh "MeBooks · Reading") — info kategori (Live web app, dsb.) masih ada di tempat lain.
+
+**Takde FAQ/testimonial/logo klien ditambah** — reference tu ada, BRODYN takde bahan sebenar untuk itu, jadi deliberately diskip (tak fabricate).
+
+**Nota kerahsiaan:** jangan sebut nama laman yang dijadikan rujukan visual dalam mana-mana commit message, PR, atau dokumentasi projek ni — susunan/layout boleh diguna sebagai inspirasi, tapi sumber tak didedahkan di mana-mana tempat awam/repo.
+
 ## 2026-11-24 — Plan: rename folder root ke "Web Page Brodyn"
 
 User nak rename folder root dari `Web Page` ke `Web Page Brodyn` (sebab nama tak jelas, risiko keliru/lupa dengan folder lain). Rename kena buat **luar sesi Claude Code** (File Explorer atau PowerShell `Rename-Item`), sebab sesi yang tengah jalan lock path lama.
