@@ -1,5 +1,13 @@
 # Progress Log
 
+## 2026-11-25 — Fix spacing section About + susun semula Selected work (PR #16, #17 merged)
+
+User tanya kenapa perenggan dalam "The person behind Brodyn" (section About) tak justify dan nampak bersambung/kurang jelas. Punca: `p{margin:0}` reset global dalam `base.css` + `.about p{margin-top:0}` buang semua jarak vertical antara perenggan — bukan sebab justify tiada. Keputusan: **tak** justify (risiko word-spacing tak sekata/"rivers" pada lajur sempit ~500px, terutama tanpa `hyphens:auto`), sebaliknya tambah `margin-bottom:var(--space-md)` kat `.about p` untuk pisahkan perenggan dengan jelas. Branch `fix/about-paragraph-spacing`, PR #16.
+
+User perasan juga Personal Training Log Dashboard (addition paling latest ke portfolio, lihat entri bawah) tersilap letak kat posisi kedua dalam Selected work, patutnya pertama (card terbaru di depan). Card & footer link disusun semula — Personal Training Log Dashboard kini pertama, mendahului MeBooks Reading Tracker. Branch `portfolio/reorder-latest-first`, PR #17.
+
+Kedua-dua PR di-merge terus (`gh pr merge --merge --delete-branch`), local `main` disync (fast-forward ke `d90b2f3`), branch kerja dipadam (local + remote). Live site (`brodynhq.com`) diperiksa — respond 200 OK lepas merge.
+
 ## 2026-11-25 — Tambah projek "Personal Training Log Dashboard" ke Selected work
 
 User (hafizz) tanya boleh tambah showcase projek GitHub terbaru dia dalam portfolio. Dicari guna `gh repo list brodyn-dev` — jumpa `hafizz-training-log` (public). Check `gh api repos/.../commits` dan repo metadata dulu sebelum tulis apa-apa copy: repo ni **fork** dari `dreeveapp/dreeve` (projek open-source self-hosted fitness dashboard, dulu nama "Statistics for Strava"), **bukan** app yang dibina dari kosong oleh hafizz. Kerja sebenar hafizz: deploy Docker + Cloudflare Tunnel (`metrain.brodynhq.com`), import backlog Strava (876 aktiviti), retheme penuh (warna moss, font, logo), beberapa bug fix UI (theme toggle sync, OG image dashboard, table width widget).
