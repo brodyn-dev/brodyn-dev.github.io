@@ -1,5 +1,13 @@
 # Progress Log
 
+## 2026-11-25 — Tambah projek "Personal Training Log Dashboard" ke Selected work
+
+User (hafizz) tanya boleh tambah showcase projek GitHub terbaru dia dalam portfolio. Dicari guna `gh repo list brodyn-dev` — jumpa `hafizz-training-log` (public). Check `gh api repos/.../commits` dan repo metadata dulu sebelum tulis apa-apa copy: repo ni **fork** dari `dreeveapp/dreeve` (projek open-source self-hosted fitness dashboard, dulu nama "Statistics for Strava"), **bukan** app yang dibina dari kosong oleh hafizz. Kerja sebenar hafizz: deploy Docker + Cloudflare Tunnel (`metrain.brodynhq.com`), import backlog Strava (876 aktiviti), retheme penuh (warna moss, font, logo), beberapa bug fix UI (theme toggle sync, OG image dashboard, table width widget).
+
+**Keputusan (confirm dengan user guna AskUserQuestion):** (1) link live dashboard terus (`https://metrain.brodynhq.com`) dalam card, walaupun dashboard tu papar data fitness peribadi sebenar (nama, rupa lokasi lari/basikal) — user dah confirm ok; (2) copy explicitly declare ia "self-hosted & customized open-source app", bukan claim "built from scratch" — supaya jujur, sebab semua card lain dalam Selected work describe app yang dibina sendiri (React/Power BI/dsb).
+
+Card baru letak dalam `index.html` (lepas MeBooks Reading Tracker), guna pattern sedia ada (tech tags, `<details>` overview, status, `.actions` dengan button + project-link macam card Malaysia Labour Market Intelligence). Link GitHub pun ditambah (`https://github.com/brodyn-dev/hafizz-training-log`). Footer "Selected projects" list pun ditambah entry sama untuk konsisten dengan projek live lain. Verified kat browser (local `static-preview` server, sebab file:// terus tak load CSS betul dalam preview pane).
+
 ## 2026-11-25 — Tukar Blueprint ke sheet "whiteprint" (PR #14 merged) — site kini terang semula
 
 User rasa tema "cyanotype" (dark, round sebelum ni) terlalu berat/"ringan kepala", dan tanya sama ada ni memang betul ikut skill Hallmark. Check punca: tema Blueprint sendiri ada **3 sheet variant** dalam dokumentasi dia (cyanotype/dark, whiteprint/light, brownline/sepia) — fork guna default (cyanotype) je tanpa declare pilihan lain ada. Bukan salah skill, salah pilihan variant.
