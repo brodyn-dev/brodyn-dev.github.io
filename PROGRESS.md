@@ -1,5 +1,13 @@
 # Progress Log
 
+## 2026-11-25 — Restyle tema warna (PR #13 merged) — site kini "Blueprint" dark theme
+
+User rasa tema navy/blue-on-white (dari redesign awal) generic/tak ada vibe. Jalankan Hallmark **restyle** depth (bukan full redesign — layout/content kekal, cuma sistem visual berubah): deal 3 tema, pilih **Blueprint** — seluruh page dark navy sheet, putih sebagai satu-satunya aksen/ink, radius 0, takde shadow, card guna keyline nipis. Masih ada benang biru ke identity lama, tapi jauh lebih distinctive.
+
+Contrast diukur betul guna canvas-based sRGB conversion dalam browser (bukan andaian): body text ~6.2:1, heading ~10.5:1, button ~11.3:1 — semua lepas AA, kebanyakan lepas AAA. Semua fix alignment sesi ni (card divider, grid gap kosong, about/contact centering) di-reverify kat 1600px & mobile, semua masih hold.
+
+Branch `restyle/theme-refresh`, PR #13, merged ke `main` (fast-forward, `e7dbd2d`). Site live brodynhq.com kini guna tema Blueprint ni.
+
 ## 2026-11-25 — Isu sama jumpa di "Selected work" grid, dah dibaiki
 
 User jumpa isu sama (slot kosong) di section "Selected work": card terakhir (Malaysia Labour Market Intelligence) di-set `grid-column:1/-1` (full-width, side-by-side image+text) semasa redesign — ini BUKAN dari CSS asal, memang diperkenalkan semasa redesign sebagai "featured card" style. 6 project card dalam grid 3-lajur: 2 card biasa tak boleh share baris dengan satu card full-width, so dia terpaksa jatuh baris baru, tinggalkan slot kosong. Dibetulkan dengan kembalikan card tu jadi width biasa (gambar di atas, macam design asal sebelum redesign) — 6 card kini isi genap 2 baris × 3 lajur. Commit `814033c`.
