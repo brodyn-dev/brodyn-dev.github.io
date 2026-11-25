@@ -1,5 +1,13 @@
 # Progress Log
 
+## 2026-11-25 — Dua lagi pembetulan services grid (lepas user screenshot langsung)
+
+User hantar screenshot live site: card "06 Web & App Development" jatuh ke baris baru bersendirian, tinggalkan slot kosong sebelah card "05" — sebab card terakhir (6 item, grid 3 lajur) di-set `grid-column:span 2` (ni dari CSS *asal*, sebelum redesign lagi — bukan baru diperkenalkan oleh redesign, tapi tetap kena baiki). 6 item memang boleh isi genap 2 baris × 3 lajur, jadi span 2 kolum tu dibuang terus (card 06 jadi width biasa macam yang lain). Commit `b89171e`.
+
+Pusingan sebelum ni (commit `e117913`) juga ada pembetulan tambahan: min-height kat tajuk+perenggan card (services & selected work) supaya jurang sebelum garis pemisah "Explore service scope"/"Read project overview" tak nampak pincang/tak sekata antara card dalam row yang sama.
+
+**Pengajaran:** lepas setiap redesign/visual fix, kena check grid kat beberapa breakpoint lebar (bukan satu je) — isu "slot kosong" ni cuma nampak di desktop lebar (3-lajur), tak nampak di 2-lajur atau mobile.
+
 ## 2026-11-25 — Pembetulan alignment lepas redesign (merged terus ke main)
 
 User complain lepas PR redesign di-merge: card "Selected work" & "Services" tak sejajar antara satu sama lain dalam row yang sama, perenggan "person behind Brodyn" nampak tak seimbang (heading pendek vs paragraf panjang), emel kat contact band senget ke kiri bawah button.
