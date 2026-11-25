@@ -8,6 +8,8 @@ User (hafizz) tanya boleh tambah showcase projek GitHub terbaru dia dalam portfo
 
 Card baru letak dalam `index.html` (lepas MeBooks Reading Tracker), guna pattern sedia ada (tech tags, `<details>` overview, status, `.actions` dengan button + project-link macam card Malaysia Labour Market Intelligence). Link GitHub pun ditambah (`https://github.com/brodyn-dev/hafizz-training-log`). Footer "Selected projects" list pun ditambah entry sama untuk konsisten dengan projek live lain. Verified kat browser (local `static-preview` server, sebab file:// terus tak load CSS betul dalam preview pane).
 
+Branch `portfolio/add-training-log-dashboard`, PR #15, user confirm merge terus (`gh pr merge --merge`, commit `8615590`) — site live brodynhq.com kini ada card ni. Local `main` disync (fast-forward), branch kerja dipadam (local + remote) lepas merge.
+
 ## 2026-11-25 — Tukar Blueprint ke sheet "whiteprint" (PR #14 merged) — site kini terang semula
 
 User rasa tema "cyanotype" (dark, round sebelum ni) terlalu berat/"ringan kepala", dan tanya sama ada ni memang betul ikut skill Hallmark. Check punca: tema Blueprint sendiri ada **3 sheet variant** dalam dokumentasi dia (cyanotype/dark, whiteprint/light, brownline/sepia) — fork guna default (cyanotype) je tanpa declare pilihan lain ada. Bukan salah skill, salah pilihan variant.
