@@ -1,5 +1,11 @@
 # Progress Log
 
+## 2026-11-25 — Isu sama jumpa di "Selected work" grid, dah dibaiki
+
+User jumpa isu sama (slot kosong) di section "Selected work": card terakhir (Malaysia Labour Market Intelligence) di-set `grid-column:1/-1` (full-width, side-by-side image+text) semasa redesign — ini BUKAN dari CSS asal, memang diperkenalkan semasa redesign sebagai "featured card" style. 6 project card dalam grid 3-lajur: 2 card biasa tak boleh share baris dengan satu card full-width, so dia terpaksa jatuh baris baru, tinggalkan slot kosong. Dibetulkan dengan kembalikan card tu jadi width biasa (gambar di atas, macam design asal sebelum redesign) — 6 card kini isi genap 2 baris × 3 lajur. Commit `814033c`.
+
+**Patut saya dah check dari awal:** lepas fix grid pertama (services), saya patut terus check grid "Selected work" juga sebab guna struktur serupa (grid 3-lajur + card khas) — tak tunggu user jumpa sendiri.
+
 ## 2026-11-25 — Dua lagi pembetulan services grid (lepas user screenshot langsung)
 
 User hantar screenshot live site: card "06 Web & App Development" jatuh ke baris baru bersendirian, tinggalkan slot kosong sebelah card "05" — sebab card terakhir (6 item, grid 3 lajur) di-set `grid-column:span 2` (ni dari CSS *asal*, sebelum redesign lagi — bukan baru diperkenalkan oleh redesign, tapi tetap kena baiki). 6 item memang boleh isi genap 2 baris × 3 lajur, jadi span 2 kolum tu dibuang terus (card 06 jadi width biasa macam yang lain). Commit `b89171e`.
