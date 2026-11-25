@@ -1,5 +1,13 @@
 # Progress Log
 
+## 2026-11-25 — Pembetulan alignment lepas redesign (merged terus ke main)
+
+User complain lepas PR redesign di-merge: card "Selected work" & "Services" tak sejajar antara satu sama lain dalam row yang sama, perenggan "person behind Brodyn" nampak tak seimbang (heading pendek vs paragraf panjang), emel kat contact band senget ke kiri bawah button.
+
+**Punca sebenar (disahkan secara visual + inspect computed style, bukan agak-agak):** grid/flex card guna `margin-top:auto` untuk tolak bahagian "toggle details" ke bawah card supaya sejajar — tapi height "unit yang ditolak" tu lain-lain antara card (satu card ada button extra, title/desc lain panjang), jadi garis pemisah jatuh di ketinggian berbeza walaupun card tinggi sama. About section pula sekadar top-aligned dalam grid 2 lajur yang sangat tak seimbang (heading pendek vs 4 perenggan).
+
+**Pembetulan (`assets/site.css`):** services grid guna pattern flex+margin-top:auto yang sama macam project cards; project card yang takde button extra reserve ketinggian button tu (placeholder `::after`) supaya semua card dalam row sejajar; `.about` guna `align-items:center`; emel contact guna `align-items:center` (dulu `flex-start`). Verified desktop (1440px) + mobile (375px) sebelum push. Commit `aff5c37`, push terus ke `main` (bukan perubahan besar, patch alignment je).
+
 ## 2026-11-25 — Redesign susunan/layout homepage, branch `redesign/homepage-layout-refresh`, PR #11
 
 User minta redesign susunan/layout `index.html` (reference luar sebagai arahan visual), tanpa ubah content BRODYN sedia ada. Dibuat guna skill Hallmark (`redesign` mode, full depth) + `no-ai-slop` untuk ayat yang terpaksa ditulis semula. Kerja berat (baca reference, sloplint) di-delegate ke subagent fork; hasil disemak manual (baca diff penuh, browser screenshot setiap section, desktop+mobile).
