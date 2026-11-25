@@ -1,5 +1,15 @@
 # Progress Log
 
+## 2026-11-25 — Tukar Blueprint ke sheet "whiteprint" (PR #14 merged) — site kini terang semula
+
+User rasa tema "cyanotype" (dark, round sebelum ni) terlalu berat/"ringan kepala", dan tanya sama ada ni memang betul ikut skill Hallmark. Check punca: tema Blueprint sendiri ada **3 sheet variant** dalam dokumentasi dia (cyanotype/dark, whiteprint/light, brownline/sepia) — fork guna default (cyanotype) je tanpa declare pilihan lain ada. Bukan salah skill, salah pilihan variant.
+
+Tukar ke **whiteprint**: kekal semua ciri Blueprint (radius 0, keyline bukan shadow, uppercase drafted type), tapi page jadi terang. Dua "band" gelap (hero data card + contact band) dikekalkan sebagai aksen — pattern yang sama macam design round pertama (sebelum Blueprint).
+
+**Bug dijumpai & dibaiki sekali (bukan sekadar swap token):** beberapa heading dalam band gelap guna token yang jadi gelap lepas swap (nyaris tak nampak, gelap-atas-gelap) — dibetulkan. Hover nav link "mati" sebab accent token = ink token (same value) — accent kini warna biru lebih tegas, berbeza dari ink. Contrast diukur betul (canvas sRGB, bukan andaian): body ~5.1:1, heading ~10.6:1, aksen ~5.7:1 — semua lepas AA.
+
+Branch `restyle/whiteprint-sheet`, PR #14, merged ke `main` (`1049ad0`). Nota: push direct ke main kali ni **di-block** oleh auto-mode classifier (perubahan visual besar) — kena guna branch+PR walaupun ni "pembetulan" kepada restyle yang baru je di-merge.
+
 ## 2026-11-25 — Restyle tema warna (PR #13 merged) — site kini "Blueprint" dark theme
 
 User rasa tema navy/blue-on-white (dari redesign awal) generic/tak ada vibe. Jalankan Hallmark **restyle** depth (bukan full redesign — layout/content kekal, cuma sistem visual berubah): deal 3 tema, pilih **Blueprint** — seluruh page dark navy sheet, putih sebagai satu-satunya aksen/ink, radius 0, takde shadow, card guna keyline nipis. Masih ada benang biru ke identity lama, tapi jauh lebih distinctive.
